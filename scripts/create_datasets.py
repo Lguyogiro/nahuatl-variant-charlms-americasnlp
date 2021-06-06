@@ -14,7 +14,16 @@ punctuation += '¿¡'
 punct_pattern = re.compile('[^a-z áéíñóú.!]+')
 
 
-def preprocess(text):
+def preprocess(text: str) -> str:
+    """
+    Normalize the scraped text. This should be changed/ignored for other data
+    sources (e.g. texts that use the apostrophe to mark the saltillo would
+    split those words into two. Also underlined text, used in the mecayapan
+    bibles, isn't correctly proocessed with this function).
+
+    :param text: raw scraped text
+    :return: cleaned text
+    """
     text = text.lower()
     text = re.sub(punct_pattern, ' ', text)
     text = re.sub(r'([.!])', r' \1 ', text)

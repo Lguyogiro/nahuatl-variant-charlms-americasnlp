@@ -1,10 +1,7 @@
-import sys, numpy as np
-#from sklearn.utils.extmath import softmax
+import numpy as np
 from matplotlib import pyplot as plt
 from scipy.cluster.hierarchy import dendrogram, linkage
 
-from scipy.cluster.hierarchy import cophenet
-from scipy.spatial.distance import pdist
 
 dic = {}
 langs = set()
@@ -39,8 +36,8 @@ print(XX)
 
 Z = linkage(XX, 'ward')
 
-font = {'family' : 'FreeSans',
-        'size'   : 48}
+font = {'family': 'FreeSans',
+		'size': 48}
 
 plt.rc('font', **font)
 
@@ -49,13 +46,7 @@ plt.figure(figsize=(25, 12))
 plt.title('Variant Clustering by Cross-Variant Perplexity')
 plt.ylabel('Language')
 plt.xlabel('Distance')
-dendrogram(
-    Z,
-    orientation='left',
-    labels=langs,
-#    leaf_rotation=90.,  # rotates the x axis labels
-    leaf_font_size=24,  # font size for the x axis labels
-)
+dendrogram(Z, orientation='left', labels=langs, leaf_font_size=24)
 
 plt.tight_layout()
 #plt.show()

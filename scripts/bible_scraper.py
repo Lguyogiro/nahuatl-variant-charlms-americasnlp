@@ -1,3 +1,7 @@
+"""
+Scrape bible text from html if a translation is available for each Nahuatl
+variant liste in variantes.csv.
+"""
 import json
 import re
 import requests

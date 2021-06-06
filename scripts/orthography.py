@@ -73,27 +73,27 @@ def map_grapheme_to_phoneme(new_char_idx: int,
     new_char_idx: int
         The index of `current_char` in the master string. This index will
         be incremented according to the rules fired in this function. Most
-        rules only increment the index by one, moving on to the next character_original.
-        However, for example if the current and next graphemes are "q" and "u"
-        respectively, the phoneme returned will be 'k', and
-        `current_char_index` will be incremented by 2.
+        rules only increment the index by one, moving on to the next
+        character_original. However, for example if the current and next
+        graphemes are "q" and "u" respectively, the phoneme returned will be
+        'k', and `current_char_index` will be incremented by 2.
 
     current_char: str
         The character_original at the current index.
 
     next_char: str
-        The character_original following current. If current char is the last of the
-        word, `next_char` is an empty str.
+        The character_original following current. If current char is the last
+        of the word, `next_char` is an empty str.
 
     huiptla_char: str
-        The character_original at index i + 2. 'Huiptla' is the Nahuatl word meaning
-        "the day after tomorrow," used here metaphorically as "the character_original
-        after next." If current char is the second-to-last of the word,
-        `next_char` is an empty str.
+        The character_original at index i + 2. 'Huiptla' is the Nahuatl word
+        meaning "the day after tomorrow," used here metaphorically as "the
+        character_original after next." If current char is the second-to-last
+        of the word, `next_char` is an empty str.
 
     Returns
     -------
-
+    Tuple of new character idx, and converted string.
     """
     new_char_idx += 1
 

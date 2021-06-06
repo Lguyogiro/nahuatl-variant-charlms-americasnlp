@@ -1,3 +1,12 @@
+"""
+Once you've created the variant dataset with `create_datasets.py`, use this
+script to generate a dataset that combines variants, which can be used for the
+variant identification task. In our experiments, we only use the test set since
+we don't actually train a model for this task (we choose the variant whose
+language model has the lowest perplexity). However, this dataset could be
+used for a separate variant id model/experiment as well.
+
+"""
 from pathlib import Path
 import random
 
@@ -8,9 +17,9 @@ dev_size = 552
 test_size = 552
 
 
-path_to_train = Path('char', 'normalized', 'train')
-path_to_combined = Path('variant_id', 'char', 'normalized')
-path_to_eval = Path('char', 'normalized', 'eval')
+path_to_train = Path('..', 'data', 'char', 'normalized', 'train')
+path_to_combined = Path('..', 'data', 'variant_id', 'char', 'normalized')
+path_to_eval = Path('..', 'data', 'char', 'normalized', 'eval')
 
 
 if __name__ == '__main__':
